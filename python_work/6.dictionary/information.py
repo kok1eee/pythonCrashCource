@@ -30,7 +30,20 @@ error_glossary = {
     'ValueError':'型は正しくても、値が適切でない場合に発生するエラーです。',
     'AttributeError':'属性(Attribute)を呼び出す際に発生するエラーです。',
     'IndexError':'リスト型やタプル型に対して、要素数を超えたインデックス値を指定した場合に発生するエラーです。',
-    'KeyError':'辞書型に対してキーを指定して取得する際に、存在しないキーを指定した際に発生するエラーです。'
+    'KeyError':'辞書型に対してキーを指定して取得する際に、存在しないキーを指定した際に発生するエラーです。',
+    'ModuleNotFoundError':'読み込んだモジュールが見つからない場合に発生するエラーです。',
+    'ZeroDivisionError':'数値に対する演算の際に、0で割り算等が行われた場合に発生するエラーです。'
+    }
 
-}
+for error in error_glossary:
+    content = error_glossary[error]
+    print(f"{error}:{content}\n")
 
+for name, value in error_glossary.items():
+    print(f"{name}:{value}\n")
+
+for name in error_glossary.keys():
+    print(name)
+
+for value in error_glossary.values():
+    print(value)

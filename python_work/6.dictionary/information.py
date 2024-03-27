@@ -7,21 +7,6 @@ print(person_information['last_name'])
 print(person_information['age'])
 print(person_information['city'])
 
-
-favorite_numbers = {
-    'itadori':1,
-    'megumi':22,
-    'nobara':4,
-    'toge':9,
-    'maki':6,
-    'satoru':22
-    }
-
-for favorite_number in favorite_numbers:
-    number = favorite_numbers[favorite_number]
-
-    print(f"{favorite_number}の好きな番号は{number}です。")
-
 error_glossary = {
     'SyntaxError':'プログラムが文法的に正しくないと判断された場合に発生します。',
     'IndentationError':'インデントが正しくない場合に発生するエラーです。',

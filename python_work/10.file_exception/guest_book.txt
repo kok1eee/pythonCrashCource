@@ -1,0 +1,5 @@
+﻿& C:/Users/m-taz/AppData/Local/Programs/Python/Python312/python.exe c:/Users/m-taz/Documents/pythonCrashCourse/python_work/10.file_exception/10-4.guest_book.py様
+masayoshi様
+田澤様
+& C:/Users/m-taz/AppData/Local/Programs/Python/Python312/python.exe c:/Users/m-taz/Documents/pythonCrashCourse/python_work/10.file_exception/10-5reason.py様
+家で仕事できるから様

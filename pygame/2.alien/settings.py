@@ -22,3 +22,10 @@ class Settings:
 
         self.h_bullet_width = 15
         self.h_bullet_height = 3
+
+        # エイリアンの設定
+        self.alien_speed = 1.0
+        self.fleet_drop_speed = 10
+        # 艦隊の移動方向を表し1は右、-1は左に移動することを表す
+        self.fleet_direction = 1
+

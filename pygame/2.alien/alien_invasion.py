@@ -13,7 +13,6 @@ class AlienInvasion:
         """ゲームを初期化し、ゲームのリソースを作成する"""
         pygame.init()
         self.settings = Settings()
-
         self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         self.settings.screen_width = self.screen.get_rect().width
         self.settings.screen_height = self.screen.get_rect().height
@@ -31,6 +30,7 @@ class AlienInvasion:
             self._check_events()
             self.ship.update()
             self._update_bullets()
+            self._update_aliens()
             self._update_screen()
 
     def _check_events(self):
@@ -77,7 +77,36 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
     
+    def _update_aliens(self):
+        """艦隊にいる全エイリアンの位置を更新する"""
+        self.aliens.update()
+    
     def _create_fleet(self):
+        """エイリアンの艦隊を作成する"""
+        # 一匹のエイリアンを作成する
+        alien = Alien(self)
+        alien_width, alien_height = alien.rect.size
+        available_space_x = self.settings.screen_width - (2 * alien_width)
+        number_aliens_x = available_space_x // (2 * alien_width)
+
+        # 画面に収まるエイリアンの列数を決定する
+        ship_height = self.ship.rect.height 
+        available_space_y = (self.settings.screen_height - (3 * alien_height) - ship_height)
+        number_rows = available_space_y // (2 * alien_height)
+
+        # エイリアンの艦隊を作成する
+        for row_number in range(number_rows):
+            for alien_number in range(number_aliens_x):
+                self._create_alien(alien_number, row_number)
+    
+    def _create_alien(self, alien_number, row_number):
+        """エイリアンを一匹作成し列の中に配置する"""
+        alien = Alien(self)
+        alien_width, alien_height = alien.rect.size
+        alien.x = alien_width + 2 * alien_width * alien_number
+        alien.rect.x = alien.x
+        alien.rect.y = alien.rect.height + 2 * alien.rect.height * row_number
+        self.aliens.add(alien)
 
     def _update_screen(self):
         """画面上の画像を更新し、新しい画面に切り替える"""
@@ -85,6 +114,7 @@ class AlienInvasion:
         self.ship.blitme()
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
+        self.aliens.draw(self.screen)
 
         pygame.display.flip()
 

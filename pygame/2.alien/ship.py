@@ -10,7 +10,7 @@ class Ship:
         self.screen_rect = ai_game.screen.get_rect()
 
         # 宇宙船の画像を読み込み、サイズを取得する
-        self.image = pygame.image.load('1.spaceship\images\ship.bmp')
+        self.image = pygame.image.load('images\ship.bmp')
         self.rect = self.image.get_rect()
 
         # 新しい宇宙船を画面下部の中央に配置する

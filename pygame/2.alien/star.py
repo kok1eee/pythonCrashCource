@@ -8,7 +8,7 @@ class Star(Sprite):
         self.screen = ss.screen
         
         # 星の画像を読み込み、サイズを取得する
-        self.image = pygame.image.load('images/star.png')
+        self.image = pygame.image.load('/Users/tazawa-masayoshi/Documents/GitHub/pythonCrashCourse/pygame/2.alien/images/star.png')
         self.image = pygame.transform.scale(self.image, (100, 100))
         self.rect = self.image.get_rect()
 

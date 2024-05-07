@@ -11,7 +11,7 @@ class Alien(Sprite):
         self.settings = ai_game.settings
 
         # エイリアンの画像を読み込み、サイズを取得する
-        self.image = pygame.image.load('images/alien.bmp')
+        self.image = pygame.image.load('/Users/tazawa-masayoshi/Documents/GitHub/pythonCrashCourse/pygame/2.alien/images/alien.bmp')
         self.rect = self.image.get_rect()
 
         # 新しいエイリアンを画面の左上の近くに配置する
